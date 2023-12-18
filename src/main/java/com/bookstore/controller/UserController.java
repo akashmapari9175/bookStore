@@ -10,5 +10,9 @@ public class UserController {
 	public String home() {
 		return "home";
 	}
+	@GetMapping("/register")
+	public String register() {
+		return "register";
+	}
 	
 }
