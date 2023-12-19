@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="base::layout(~{::section})">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title th:text="${title}">Insert title here</title>
+</head>
+
+<body>
+
+	<section class="banner d-flex justify-content-center align-items-center">
+		<div class="container my-5">
+
+			<table class="table">
+				<thead>
+					<tr>
+						<th scope="col">Id</th>
+						<th scope="col">Name</th>
+						<th scope="col">Author</th>
+						<th scope="col">price</th>
+						<th scope="col">Action</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="b : ${book}">
+						<td th:text="${b.id}"></td>
+						<td th:text="${b.name}"></td>
+						<td th:text="${b.author}"></td>
+						<td th:text="${b.price}"></td>
+						<td><a class="btn btn-primary btn-sm" th:href="@{/mylist/{id}(id=${b.id})}">Add To MyBook</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</section>
+
+</body>
+
+</html>
