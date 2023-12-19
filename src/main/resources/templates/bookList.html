@@ -19,6 +19,7 @@
 						<th scope="col">Author</th>
 						<th scope="col">price</th>
 						<th scope="col">Action</th>
+						
 					</tr>
 				</thead>
 				<tbody>
@@ -27,7 +28,12 @@
 						<td th:text="${b.name}"></td>
 						<td th:text="${b.author}"></td>
 						<td th:text="${b.price}"></td>
-						<td><a class="btn btn-primary btn-sm" th:href="@{/mylist/{id}(id=${b.id})}">Add To MyBook</a></td>
+						<td><a class="btn btn-primary " th:href="@{/mylist/{id}(id=${b.id})}">Add To MyBook</a>
+							<a style="color: white" class="btn btn-danger btn-sm" type="button"
+								th:href="@{deleteBookById/{id}(id=${b.id})}">Delete</a>
+						
+						</td>
+					
 					</tr>
 				</tbody>
 			</table>

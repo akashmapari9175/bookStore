@@ -28,5 +28,8 @@ public class ServiceBook {
 		Book book = repo.findById(id).get();  //this get method is change the optional to the book object
 		return book;
 	}
+	public void deleteBook(int id) {
+		repo.deleteById(id);
+	}
 	
 }

@@ -76,5 +76,11 @@ public class BookController {
 
 		return "redirect:/mybook";
 	}
+	@RequestMapping("deleteBookById/{id}")
+	public String deleteBook(@PathVariable("id") int id) {
+		
+		serviceBook.deleteBook(id);
+		return "redirect:/availeblebook";
+	}
 
 }
