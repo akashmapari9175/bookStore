@@ -41,7 +41,8 @@ CREATE TABLE `book` (
 INSERT INTO `book` (`id`, `author`, `name`, `price`) VALUES
 (203, 'akash', 'Akash mapari', '200'),
 (204, 'deva', 'devarsh nawde', '300'),
-(205, 'ashish', 'ashish dubbewar', '100');
+(205, 'ashish', 'ashish dubbewar', '100'),
+(206, 'ashish', 'ashish dubbewar', '100');
 
 --
 -- Indexes for dumped tables
