@@ -60,6 +60,7 @@ public class BookController {
 	@PostMapping("/save")
 	public String addBook(@ModelAttribute Book b) {
 		// Book save = bookRepository.save(b);
+		//ServiceBook sr = new ServiceBook();
 		serviceBook.save(b);
 		return "redirect:/availeblebook"; // redirect to the url so we have to give url here
 	}

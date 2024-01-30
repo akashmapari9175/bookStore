@@ -49,7 +49,5 @@ public class Book {
 	public void setPrice(String price) {
 		this.price = price;
 	}
-	
-	
-	
+
 }
