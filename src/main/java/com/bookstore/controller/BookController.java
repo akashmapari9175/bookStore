@@ -31,7 +31,8 @@ public class BookController {
 	private MyBookService myBookService;
 
 	@GetMapping("/")
-	public String home() {
+	public String home(Model m) {
+		m.addAttribute("title","Home page");
 		return "home";
 	}
 
@@ -45,8 +46,7 @@ public class BookController {
 	public String getAllBook(Model m) {
 		List<Book> list = serviceBook.getAllBook();
 		m.addAttribute("book", list);
-		m.addAttribute("title","availeblebook");
-		// return new ModelAndView("bookList", "book",list);
+		m.addAttribute("title","Availeble Book");
 		return "bookList";
 	}
 
@@ -54,13 +54,12 @@ public class BookController {
 	public String getBook(Model m) {
 		List<MyBookList> myAllBook = myBookService.getMyAllBook();
 		m.addAttribute("myBookList", myAllBook);
+		m.addAttribute("title","My Book");
 		return "mybook";
 	}
 
 	@PostMapping("/save")
 	public String addBook(@ModelAttribute Book b) {
-		// Book save = bookRepository.save(b);
-		//ServiceBook sr = new ServiceBook();
 		serviceBook.save(b);
 		return "redirect:/availeblebook"; // redirect to the url so we have to give url here
 	}
